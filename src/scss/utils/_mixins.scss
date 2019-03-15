@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* _mixins.scss */
+
+@mixin blind() {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  font-size: medium;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+@mixin afterClear() {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@mixin ellipsis(
+  $lines: 1,
+  $display: inline-block,
+  $width: null,
+  $max-width: null,
+  $overflow: hidden
+) {
+  overflow: $overflow;
+  width: $width;
+  max-width: $max-width;
+  text-overflow: ellipsis;
+  @if ($lines <= 1) {
+    display: $display;
+    white-space: nowrap;
+    word-wrap: normal;
+  } @else {
+    display: $display;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin setBorderMask($width: 1px, $color: #000, $opacity: 0.05) {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: $width solid rgba($color, $opacity);
+    @content;
+  }
+}
+
+@mixin setThumbnailBorder($color: #000, $opacity: 0.04, $border-radius: null) {
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border: 1px solid rgba($color, $opacity);
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    transform: scale(0.5);
+    @content;
+  }
+}
+
+@mixin setDimmed(){
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    // Chrome, Safari, Edge
+    @content;
+  }
+  &::-moz-placeholder {
+    // FF 19+
+    @content;
+  }
+  &:-ms-input-placeholder {
+    // IE 10+
+    @content;
+  }
+  &:-moz-placeholder {
+    // FF 18-
+    @content;
+  }
+}
+
+@mixin media($breakpoint){
+  // $breakpoint 는 variable  참고
+  $get-breakpoint: map-get($breakpoints, $breakpoint);
+  @if map-has-key($breakpoints, $breakpoint){
+      @if ($breakpoint == mobile-min or $breakpoint == mobile-only) {
+          @media all and (max-width: $get-breakpoint) {
+              @content;
+          }
+      } @else if ($breakpoint == mobile-min-height){
+          @media all and (max-height: $get-breakpoint) {
+            @content;
+          }
+      } @else {
+          @media all and (min-width: $get-breakpoint) {
+              @content;
+          }
+      }
+  } @else if(type_of($breakpoint) == number) {
+      @media all and (min-width: $breakpoint) {
+          @content;
+      }
+  } @else {
+      @warn '#{$breakpoint} 에 대한 미디어 값이 없습니다.';
+  }
+}

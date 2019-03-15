@@ -1,0 +1,79 @@
+@charset 'utf-8';
+@import '../../scss/utils/';
+
+.header {
+  position: relative;
+  padding-right: 20px;
+  padding-left: 20px;
+  min-width: 375px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box; 
+  background-color: #fff;
+
+  @include media(pc) {
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+  }
+}
+
+.inner {}
+
+.link_title {
+  display: block;
+}
+
+.title {
+  color: $mainColor1;
+  font-weight: bold;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+
+.feature_group {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.link_search, .link_new_post {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.link_search {
+  padding: 0 10px;
+  font-size: 0.875em; 
+}
+
+.link_new_post {
+  position: relative;
+  font-size: 0.875em;
+  line-height: initial;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 8px 5px 20px;
+}
+
+.icon_new_post {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+}
+
+.link_login {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.875em;
+  line-height: inherit;
+}
+
+.menu_auth {
+  position: absolute;
+}

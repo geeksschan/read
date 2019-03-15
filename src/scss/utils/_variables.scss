@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* _variables.scss */
+
+$G-font-default: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Apple SD Gothic Neo', 'Arial', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움', sans-serif;
+
+// 미디어쿼리 - 디바이스 넓이
+$breakpoints: (
+  mobile-min: 320px,
+  mobile-min-height: 640px,
+	mobile: 375px,
+	mobile-only: 767px,
+  tablet: 768px,
+  pc-min: 769px,
+	pc: 1024px
+)!global;
+
+// 인터렉션 curve 속성값
+$easeInOut: cubic-bezier(0.44, 0.11, 0.14, 1);
+$easeOut : cubic-bezier(0.215, 0.61, 0.355, 1);
+$spring : cubic-bezier(0.38, 1.71, 0.31, 1);
+
+$mainColor1: #6C49B8;
+$mainColor2: #4F86C6;
+$mainColor3: #4FB0C6;
+$mainColor4: #379392;
