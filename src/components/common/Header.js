@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
 
 import style from './Header.scss';
-import Dropdown from './Dropdown';
+import DropdownUser from './DropdownUser';
 
 const DEMO_PROPS = {
-  isLogin: true
+  isLogin: true,
+  username: 'geeksschan',
+  thumbnailUrl: 'http://cfile201.uf.daum.net/R400x0/2601F24351134D061AB2CB'
 };
-
-function AuthButton(props) {
-  const { isLogin } = props;
-  if(isLogin) {
-    return (
-      <div>
-        <button type="button"></button>
-        <Dropdown className={style.menu_auth}>
-
-        </Dropdown>
-      </div>
-    );
-
-  } else {
-    return (
-      <a href="/" className={style.link_login}>로그인</a>
-    );
-  }
-}
 
 class Header extends Component {
   render() {
 
-    const {isLogin} = DEMO_PROPS;
+    const {isLogin, username, thumbnailUrl} = DEMO_PROPS;
 
     return (
       <header className={style.header}>
@@ -40,7 +23,11 @@ class Header extends Component {
           <div className={style.feature_group}>
             <a href="/" className={style.link_search}>검색</a>
             <a href="/" className={style.link_new_post}><span className={style.icon_new_post}>+</span> 새 글쓰기</a>
-            <AuthButton isLogin={isLogin} />
+            { !isLogin ? (
+              <a href="/" className={style.link_login}>로그인</a>
+            ) : (
+              <DropdownUser username={username} thumbnailUrl={thumbnailUrl} />
+            )}
           </div>
         </div>
       </header>
