@@ -1,0 +1,56 @@
+@charset 'utf-8';
+@import '../../scss/utils/';
+
+.nav {
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list_nav {
+  height: 43px;
+  line-height: 43px;
+}
+
+.item_nav {
+  position: relative;
+  display: inline-block;
+
+  &[aria-selected='true'] {
+    font-weight: bold;
+    color: $mainColor2;
+
+    &:after {
+      content: '';
+      position: absolute;
+      margin-right: 15px;
+      margin-left: 15px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background-color: $mainColor2;
+    }
+  }
+
+  & + .item_nav {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 1px;
+      height: 13px;
+      background-color: #ccc;
+    }
+  }
+
+}
+
+.link {
+  display: block;
+  padding-right: 15px;
+  padding-left: 15px;
+}

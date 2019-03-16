@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './Header';
 import Jumbotron from './Jumbotron';
+import NavFilter from './NavFilter';
 
 class BaseLayout extends Component {
   render() {
@@ -9,6 +10,7 @@ class BaseLayout extends Component {
       <div>
         <Header />
         <Jumbotron />
+        <NavFilter />
         {this.props.children}  
       </div>
     );
