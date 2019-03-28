@@ -34,43 +34,39 @@
   line-height: inherit;
 }
 
-
-
-.feature_group {
+.button_menu {
   position: absolute;
   top: 0;
-  right: 10px;
-}
-
-.link_search, .link_new_post {
-  display: inline-block;
+  right: 0;
+  padding: 20px;
+  width: 56px;
+  height: 100%;
   box-sizing: border-box;
 }
 
-.link_search {
-  padding: 0 10px;
-  font-size: 0.875em; 
-}
+.icon_menu {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: $mainColor2;
 
-.link_new_post {
-  position: relative;
-  font-size: 0.875em;
-  line-height: initial;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px 8px 5px 20px;
-}
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 18px;
+    height: 2px;
+  }
 
-.icon_new_post {
-  position: absolute;
-  top: 4px;
-  left: 6px;
-}
+  &:before {
+    top: 16px;
+    background-color: $mainColor2;
+  }
 
-.link_login {
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 0.875em;
-  line-height: inherit;
+  &:after {
+    bottom: 16px;
+    background-color: $mainColor2;
+  }
 }
