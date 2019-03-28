@@ -3,16 +3,20 @@ import React, { Component } from 'react';
 import style from './Header.scss';
 import DropdownUser from './DropdownUser';
 
-const DEMO_PROPS = {
-  isLogin: true,
-  username: 'geeksschan',
-  thumbnailUrl: 'http://cfile201.uf.daum.net/R400x0/2601F24351134D061AB2CB'
-};
-
 class Header extends Component {
+
+  constructor(props) {
+    super(props);
+    this.onClickAsideButton = this.onClickAsideButton.bind(this);
+  }
+
+  onClickAsideButton() {
+    this.props.handleExpanded(this.props.isExpanded);
+  }
+
   render() {
 
-    const {isLogin, username, thumbnailUrl} = DEMO_PROPS;
+    const { isExpanded } = this.props;
 
     return (
       <header className={style.header}>
@@ -20,7 +24,12 @@ class Header extends Component {
           <a href="/" className={style.link_title}>
             <h1 className={style.title}>읽어라 읽어</h1>
           </a>
-          <button type="button" className={style.button_menu} aria-haspopup="true" aria-expanded="false">
+          <button 
+            type="button" 
+            className={style.button_menu}
+            aria-haspopup="true"
+            aria-expanded={isExpanded}
+            onClick={this.onClickAsideButton} >
             <span className={style.icon_menu}></span>
             <span className="blind">메뉴</span>
           </button>

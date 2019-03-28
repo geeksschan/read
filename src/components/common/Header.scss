@@ -37,8 +37,9 @@
 .button_menu {
   position: absolute;
   top: 0;
-  right: 0;
-  padding: 20px;
+  right: 5px;
+  padding-right: 18px;
+  padding-left: 22px;
   width: 56px;
   height: 100%;
   box-sizing: border-box;
@@ -54,8 +55,8 @@
   &:after {
     content: '';
     position: absolute;
-    left: 0;
     right: 0;
+    left: 0;
     margin: 0 18px;
     height: 2px;
   }
@@ -66,7 +67,8 @@
   }
 
   &:after {
-    bottom: 16px;
+    bottom: 15px;
+    margin-left: 26px;
     background-color: $mainColor2;
   }
 }
