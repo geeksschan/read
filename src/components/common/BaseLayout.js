@@ -21,6 +21,10 @@ class BaseLayout extends Component {
   }
 
   render() {
+    
+    const isJumbotron = this.props.location.pathname !== '/search';
+    console.log(isJumbotron);
+
     return (
       <div>
         <Header
@@ -29,7 +33,9 @@ class BaseLayout extends Component {
         <Aside 
           isExpanded={this.state.isExpanded}
           handleExpanded={this.handleExpanded} />
-        <Jumbotron />
+        {
+          isJumbotron && <Jumbotron />
+        }
         <NavFilter />
         {this.props.children}  
       </div>

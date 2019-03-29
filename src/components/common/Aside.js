@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import style from './Aside.scss';
 
 const DEMO_PROPS = {
@@ -36,7 +36,7 @@ class Aside extends Component {
           <nav className={style.nav}>
             <ul className={style.list_nav}>
               <li className={style.item_nav}>
-                <a className={style.link}>검색</a>
+                <Link to="/search" onClick={this.onClickDimmed} className={style.link}>검색</Link>
               </li>
               <li className={style.item_nav}>
                 <a className={style.link}>글쓰기</a>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import style from './Header.scss';
 import DropdownUser from './DropdownUser';
@@ -21,9 +22,9 @@ class Header extends Component {
     return (
       <header className={style.header}>
         <div className={style.inner}>
-          <a href="/" className={style.link_title}>
+          <Link to="/" className={style.link_title}>
             <h1 className={style.title}>읽어라 읽어</h1>
-          </a>
+          </Link>
           <button 
             type="button" 
             className={style.button_menu}

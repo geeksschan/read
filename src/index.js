@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import BaseLayout from './components/common/BaseLayout';
+import App from './components/App';
 
 import './scss/global.scss';
 
 ReactDOM.render(
-  <BaseLayout />,
+  <App />,
   document.getElementById('root')
 );
