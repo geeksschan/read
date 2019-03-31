@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "url": "https://www.twitch.tv/juliday97",
+      "title": "공대 변태",
+      "desc": "전자회로 성애자들의 모임",
+      "thumbnail_link": null,
+      "created": "2019-03-14T13:15:55.402262Z",
+      "types": [
+        {
+          "title": "알고리즘",
+          "url": "http://eb381c81.ngrok.io/api/type/2/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://www.twitch.tv/juliday97",
+      "title": "공대 변태2",
+      "desc": "전자회로 성애자들의 모임2",
+      "thumbnail_link": null,
+      "created": "2019-03-14T13:15:55.402262Z",
+      "types": [
+        {
+          "title": "알고리즘2",
+          "url": "http://eb381c81.ngrok.io/api/type/2/"
+        }
+      ]
+    }
+  ]
+}
