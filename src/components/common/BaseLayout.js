@@ -22,8 +22,12 @@ class BaseLayout extends Component {
 
   render() {
     
-    const isJumbotron = this.props.location.pathname !== '/search';
-    console.log(isJumbotron);
+    const jumbotronPathnames = ['/'];
+    const filterPathnames = ['/'];
+    const currentPathname = this.props.location.pathname;
+
+    const isJumbotron = jumbotronPathnames.includes(currentPathname);
+    const isFilter = filterPathnames.includes(currentPathname);
 
     return (
       <div>
@@ -33,10 +37,8 @@ class BaseLayout extends Component {
         <Aside 
           isExpanded={this.state.isExpanded}
           handleExpanded={this.handleExpanded} />
-        {
-          isJumbotron && <Jumbotron />
-        }
-        <NavFilter />
+        { isJumbotron && <Jumbotron /> }
+        { isFilter && <NavFilter /> }
         {this.props.children}  
       </div>
     );

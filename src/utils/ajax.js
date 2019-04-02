@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 
 export async function fetchCall(api) {
-  let url = 'http://localhost:3001';
+  let url = 'http://localhost:3000';
   url += api;
   let resultObj = {
     status: '',

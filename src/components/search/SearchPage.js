@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import SearchInput from './SearchInput';
+
+import styles from './SearchPage.scss';
 
 class SearchPage extends Component {
   render() {
     return (
       <section>
-        Search Page
+        <SearchInput />
       </section>
     );
   }

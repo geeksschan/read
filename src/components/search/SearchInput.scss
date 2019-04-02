@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import '../../scss/utils/';
+
+.area_search {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.box_input {
+  position: relative;
+  display: block;
+}
+
+.control_input {
+  display: block;
+  width: 100%;
+  padding-right: 60px;
+  padding-left: 10px;
+  border: 2px solid #ddd;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 40px;
+
+  @include placeholder() {
+    color: #999;
+  }
+}
+
+.button_search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  line-height: 44px;
+  font-size: 16px;
+  color: #666;
+}

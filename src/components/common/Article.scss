@@ -1,2 +1,66 @@
 @charset "utf-8";
 @import '../../scss/utils/';
+
+.article {
+  position: relative;
+}
+
+.thumbnail {
+  position: absolute;
+  left: 0;
+}
+
+.image {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.info {
+  position: relative;
+  padding-left: 95px;
+  font-size: 14px;
+  min-height: 80px;
+}
+
+.title {
+  width: 100%;
+  font-size: 16px;
+  @include ellipsis($lines:2);
+  box-sizing: border-box;
+}
+
+.desc {
+  width: 100%;
+  color: #666;
+  font-size: 13px;
+  box-sizing: border-box;
+  @include ellipsis;
+}
+
+.username {
+  position: absolute;
+  bottom: 19px;
+  color: $mainColor1;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.meta {
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+  color: #666;
+
+  &:after {
+    @include afterClear;
+  }
+}
+
+.date {
+  float: left; 
+}
+
+.views {
+  margin-left: 10px;
+}

@@ -2,29 +2,77 @@
   "items": [
     {
       "id": 1,
-      "url": "https://www.twitch.tv/juliday97",
-      "title": "공대 변태",
-      "desc": "전자회로 성애자들의 모임",
-      "thumbnail_link": null,
-      "created": "2019-03-14T13:15:55.402262Z",
-      "types": [
+      "category": "2019-04-02T13:15:55.402262Z",
+      "articles": [
         {
-          "title": "알고리즘",
-          "url": "http://eb381c81.ngrok.io/api/type/2/"
+          "id": 1,
+          "url": "https://placeimg.com/600/600/tech",
+          "title": "Instagram launches shopping checkout, charging sellers a fee",
+          "desc": "Instagram launches shopping checkout, charging sellers a fee",
+          "thumbnail_link": "https://placeimg.com/600/600/tech",
+          "username": "geeksschan",
+          "created": "2019-03-14T13:15:55.402262Z",
+          "views": 110,
+          "types": [
+            {
+              "title": "알고리즘",
+              "url": "http://eb381c81.ngrok.io/api/type/2/"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "url": "https://placeimg.com/600/600/tech",
+          "title": "DevOps란 무엇이며, CI는 무엇인가?",
+          "desc": "DevOps란 무엇이며, CI는 무엇인가?",
+          "thumbnail_link": "https://placeimg.com/600/600/tech",
+          "username": "geeksschan",
+          "created": "2019-03-14T13:15:55.402262Z",
+          "views": 110,
+          "types": [
+            {
+              "title": "알고리즘",
+              "url": "http://eb381c81.ngrok.io/api/type/2/"
+            }
+          ]
         }
       ]
     },
     {
       "id": 2,
-      "url": "https://www.twitch.tv/juliday97",
-      "title": "공대 변태2",
-      "desc": "전자회로 성애자들의 모임2",
-      "thumbnail_link": null,
-      "created": "2019-03-14T13:15:55.402262Z",
-      "types": [
+      "category": "2019-03-14T13:15:55.402262Z",
+      "articles": [
         {
-          "title": "알고리즘2",
-          "url": "http://eb381c81.ngrok.io/api/type/2/"
+          "id": 1,
+          "url": "https://placeimg.com/600/600/tech",
+          "title": "Instagram launches shopping checkout, charging sellers a fee",
+          "desc": "Instagram launches shopping checkout, charging sellers a fee",
+          "thumbnail_link": "https://placeimg.com/600/600/tech",
+          "username": "geeksschan",
+          "created": "2019-03-14T13:15:55.402262Z",
+          "views": 110,
+          "types": [
+            {
+              "title": "알고리즘",
+              "url": "http://eb381c81.ngrok.io/api/type/2/"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "url": "https://placeimg.com/600/600/tech",
+          "title": "DevOps란 무엇이며, CI는 무엇인가?",
+          "desc": "DevOps란 무엇이며, CI는 무엇인가?",
+          "thumbnail_link": "https://placeimg.com/600/600/tech",
+          "username": "geeksschan",
+          "created": "2019-03-14T13:15:55.402262Z",
+          "views": 110,
+          "types": [
+            {
+              "title": "알고리즘",
+              "url": "http://eb381c81.ngrok.io/api/type/2/"
+            }
+          ]
         }
       ]
     }

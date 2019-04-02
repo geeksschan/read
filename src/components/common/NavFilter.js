@@ -4,9 +4,7 @@ import style from './NavFilter.scss';
 
 const navList = [
   {key: 'recent', value:'최신'},
-  {key: 'day', value:'일간'},
-  {key: 'week', value:'주간'},
-  {key: 'month', value:'월간'}
+  {key: 'popular', value:'인기'}
 ];
 
 class NavFilter extends Component {
