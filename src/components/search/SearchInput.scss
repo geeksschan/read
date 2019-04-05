@@ -7,6 +7,13 @@
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+
+  &.has_result {
+    position: relative;
+    margin-top: 20px;
+    top: auto;
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .box_input {
@@ -37,4 +44,5 @@
   line-height: 44px;
   font-size: 16px;
   color: #666;
+  text-align: center;
 }

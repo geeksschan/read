@@ -17,6 +17,10 @@ class NavFilter extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    console.log('did navfilter');
+  }
+
   handleClick(e) {
     e.preventDefault();
     

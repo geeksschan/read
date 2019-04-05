@@ -7,7 +7,6 @@ import HomePage from './home/HomePage';
 import SearchPage from './search/SearchPage';
 import ErrorPage from './error/ErrorPage';
 
-
 class App extends Component {
 
   constructor(props) {

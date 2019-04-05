@@ -15,8 +15,9 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
+    publicPath: '/',
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist/static')
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [

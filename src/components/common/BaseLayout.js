@@ -12,6 +12,12 @@ class BaseLayout extends Component {
       isExpanded: false
     }
     this.handleExpanded = this.handleExpanded.bind(this);
+    this.isJumbotron = this.isJumbotron.bind(this);
+    this.isFilter = this.isFilter.bind(this);
+  }
+
+  componentDidMount() {
+    console.log('did baselayout');
   }
 
   handleExpanded(isExpanded) {
@@ -20,14 +26,21 @@ class BaseLayout extends Component {
     });
   }
 
-  render() {
-    
+  isJumbotron(currentPathname) {
     const jumbotronPathnames = ['/'];
-    const filterPathnames = ['/'];
-    const currentPathname = this.props.location.pathname;
-
     const isJumbotron = jumbotronPathnames.includes(currentPathname);
+    return isJumbotron;
+  }
+
+  isFilter(currentPathname) {
+    const filterPathnames = ['/'];
     const isFilter = filterPathnames.includes(currentPathname);
+    return isFilter;
+  }
+
+  render() {
+      
+    const currentPathname = this.props.location.pathname;
 
     return (
       <div>
@@ -37,8 +50,8 @@ class BaseLayout extends Component {
         <Aside 
           isExpanded={this.state.isExpanded}
           handleExpanded={this.handleExpanded} />
-        { isJumbotron && <Jumbotron /> }
-        { isFilter && <NavFilter /> }
+        { this.isJumbotron(currentPathname) && <Jumbotron /> }
+        { this.isFilter(currentPathname) && <NavFilter /> }
         {this.props.children}  
       </div>
     );

@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import style from './Jumbotron.scss';
 
 class Jumbotron extends Component {
+
+  componentDidMount() {
+    console.log('did jumbotron');
+  }
+
   render() {
     return (
       <div className={style.jumbotron}>

@@ -4,7 +4,7 @@ import { fetchCall } from '../../utils/ajax';
 
 import ArticleList from '../common/ArticleList';
 import Article from '../common/Article';
-
+import moment from 'moment';
 import styles from './HomePage.scss';
 
 class HomePage extends Component {
@@ -14,7 +14,8 @@ class HomePage extends Component {
     this.state = {
       isLoaded: false,
       articles: []
-    }
+    };
+    this.getTitle = this.getTitle.bind(this);
   }
 
   async componentDidMount() {
@@ -25,6 +26,14 @@ class HomePage extends Component {
     });
   }
 
+  getTitle(category) {
+    let title = moment(category).format('YYYY.MM.DD');
+    if(title == moment().format('YYYY.MM.DD')) {
+      title = '오늘';
+    }
+    return title;
+  }
+
   render() {
     const { articles, isLoaded } = this.state;
     
@@ -33,11 +42,10 @@ class HomePage extends Component {
         {isLoaded && (
           <div className={styles.area_article}>
           {articles.map((article) => {
-            console.log(article.category);
             return <ArticleList 
               articles={article.articles} 
               key={article.id}
-              category={article.category} />
+              category={this.getTitle(article.category)} />
           })}
           </div>          
         )}
