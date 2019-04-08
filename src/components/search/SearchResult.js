@@ -16,15 +16,15 @@ class SearchResult extends Component {
 
   async componentDidMount() {
     console.log('did result');
-    const hasKeyword = isEmpty(queryString.parse(this.props.location.search));
-    if(hasKeyword) {
-      let result = await fetchCall('/result');
-      this.setState({
-        hasKeyword: true,
-        isLoaded: true,
-        articles: result.response
-      });
-    }
+    // const hasKeyword = isEmpty(queryString.parse(this.props.location.search));
+    // if(hasKeyword) {
+    //   let result = await fetchCall('/result');
+    //   this.setState({
+    //     hasKeyword: true,
+    //     isLoaded: true,
+    //     articles: result.response
+    //   });
+    // }
   }
 
   render() {

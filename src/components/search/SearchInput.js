@@ -12,13 +12,21 @@ class SearchInput extends Component {
     this.state = {
       keyword: ''
     }
-    this.getUrl = this.getUrl.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.onSearch = this.onSearch.bind(this);
   }
 
-  onChange(e) {
-    const keyword = e.target.value;
-    this.props.handleChange(keyword);
+  handleChange(e) {
+    const newKeyword = e.target.value;
+    this.setState({
+      keyword: newKeyword
+    });
+  }
+
+  onSearch() {
+    this.setState({
+      keyword: ''
+    });
   }
 
   getUrl(keyword) {
@@ -29,15 +37,20 @@ class SearchInput extends Component {
 
   render() {
 
-    const { keyword, hasArticles, isResult} = this.props;
-    let areaClassName = classnames(styles.area_search, isResult && styles.has_result);
+    const { keyword } = this.state;
+    let areaClassName = classnames(styles.area_search);
 
     return (
       <div className={areaClassName}>
         <div className={styles.box_input}>
-          <input type="text" className={styles.control_input} placeholder="검색어를 입력해주세요." value={keyword} onChange={this.onChange}  />
+          <input 
+            type="text" 
+            className={styles.control_input} 
+            placeholder="검색어를 입력해주세요." 
+            value={keyword} 
+            onChange={this.handleChange} />
         </div>
-        <Link to={this.getUrl(keyword)} className={styles.button_search}>검색</Link>
+        <button type="button" className={styles.button_search}>검색</button>
       </div>
     );
   }
