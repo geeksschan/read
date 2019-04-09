@@ -14,11 +14,9 @@ class Aside extends Component {
     this.onClickDimmed = this.onClickDimmed.bind(this);
   }
 
-  componentDidMount() {
-    console.log('did aside');
-  }
+  componentDidMount() {}
 
-  onClickDimmed() {
+  onClickDimmed(e) {
     this.props.handleExpanded(this.props.isExpanded);
   }
 

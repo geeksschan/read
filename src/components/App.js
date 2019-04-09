@@ -22,6 +22,7 @@ class App extends Component {
             return (
               <BaseLayout {...props}>
                 <Route exact path="/" component={HomePage} />
+                {/* <Route exact path={["/search", "search/result"]} component={SearchPage} /> */}
                 <Route exact path={["/search", "/search/result"]} component={SearchPage} />
                 <Route path="/error" component={ErrorPage} />
               </BaseLayout>

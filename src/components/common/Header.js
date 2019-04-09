@@ -11,9 +11,7 @@ class Header extends Component {
     this.onClickAsideButton = this.onClickAsideButton.bind(this);
   }
 
-  componentDidMount() {
-    console.log('did header');
-  }
+  componentDidMount() {}
 
   onClickAsideButton() {
     this.props.handleExpanded(this.props.isExpanded);

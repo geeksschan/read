@@ -16,9 +16,7 @@ class BaseLayout extends Component {
     this.isFilter = this.isFilter.bind(this);
   }
 
-  componentDidMount() {
-    console.log('did baselayout');
-  }
+  componentDidMount() {}
 
   handleExpanded(isExpanded) {
     this.setState({

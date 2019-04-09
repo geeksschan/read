@@ -14,28 +14,20 @@ class SearchResult extends Component {
     super(props);
   }
 
-  async componentDidMount() {
-    console.log('did result');
-    // const hasKeyword = isEmpty(queryString.parse(this.props.location.search));
-    // if(hasKeyword) {
-    //   let result = await fetchCall('/result');
-    //   this.setState({
-    //     hasKeyword: true,
-    //     isLoaded: true,
-    //     articles: result.response
-    //   });
-    // }
-  }
+  componentDidMount() {}
 
   render() {
+
+    const { articles, keyword } = this.props;
+    console.log('keyword: ' + keyword);
     return (
       <div className={styles.area_result}>
-        {/* {articles.map((article) => {
+        {articles.map((article) => {
           return <ArticleList 
             articles={article.articles} 
             key={article.id}
-            category={article.category} />
-        })} */}
+            category={keyword} />
+        })}
       </div>
     );
   }
