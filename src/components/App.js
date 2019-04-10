@@ -5,6 +5,7 @@ import { withRouter} from 'react-router';
 import BaseLayout from './common/BaseLayout';
 import HomePage from './home/HomePage';
 import SearchPage from './search/SearchPage';
+import PostPage from './post/PostPage';
 import ErrorPage from './error/ErrorPage';
 
 class App extends Component {
@@ -22,8 +23,8 @@ class App extends Component {
             return (
               <BaseLayout {...props}>
                 <Route exact path="/" component={HomePage} />
-                {/* <Route exact path={["/search", "search/result"]} component={SearchPage} /> */}
                 <Route exact path={["/search", "/search/result"]} component={SearchPage} />
+                <Route exact path={["/post", "/post/:id", "/post/edit/:id"]} component={PostPage} />
                 <Route path="/error" component={ErrorPage} />
               </BaseLayout>
             )

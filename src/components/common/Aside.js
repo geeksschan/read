@@ -41,7 +41,7 @@ class Aside extends Component {
                 <Link to="/search" onClick={this.onClickDimmed} className={style.link}>검색</Link>
               </li>
               <li className={style.item_nav}>
-                <a className={style.link}>글쓰기</a>
+                <Link to="/post/edit" onClick={this.onClickDimmed} className={style.link}>글쓰기</Link>
               </li>
             </ul>
           </nav>

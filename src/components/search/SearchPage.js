@@ -46,7 +46,6 @@ class SearchPage extends Component {
       });
     }
     return null;
-    
   }
 
   handleSearch(Newkeyword) {
