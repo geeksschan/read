@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 
 import style from './NavFilter.scss';
 
-const navList = [
-  {key: 'recent', value:'최신'},
-  {key: 'popular', value:'인기'}
-];
-
 class NavFilter extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      selectName: '최신'
+      selectName: this.props.filterList[0]
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -30,14 +25,17 @@ class NavFilter extends Component {
   }
 
   render() {
+
+    const { filterList } = this.props;
+
     return (
       <nav className={style.nav}>
         <ul className={style.list_nav}>
-        { navList.map((obj) => 
+        { filterList.map((value) => 
           <li className={style.item_nav}
-              aria-selected={this.state.selectName === obj.value} 
-              key={obj.key} >
-            <a href="/" className={style.link} onClick={this.handleClick}>{obj.value}</a>
+              aria-selected={this.state.selectName === value} 
+              key={value} >
+            <a href="/" className={style.link} onClick={this.handleClick}>{value}</a>
           </li>
         )}
         </ul>

@@ -97,6 +97,12 @@
   left: 0;
 }
 
+@mixin setBackground {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @mixin placeholder() {
   &::-webkit-input-placeholder {
     // Chrome, Safari, Edge

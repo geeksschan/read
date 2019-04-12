@@ -30,10 +30,12 @@ class Aside extends Component {
         <div className={style.dimmed} onClick={this.onClickDimmed}></div>
         <div className={style.inner}>
           <div className={style.userinfo}>
-            <div className={style.thumbnail}>
-              <img className={style.image} src={thumbnailUrl} width="70" height="70" />
-            </div>
-            <strong className={style.username}>geeksschan</strong>
+            <Link to="/my" className={style.link_userinfo} onClick={this.onClickDimmed} >
+              <div className={style.thumbnail}>
+                <img className={style.image} src={thumbnailUrl} width="70" height="70" />
+              </div>
+              <strong className={style.username}>geeksschan</strong>              
+            </Link>
           </div>
           <nav className={style.nav}>
             <ul className={style.list_nav}>

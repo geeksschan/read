@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Aside from './Aside';
 import Jumbotron from './Jumbotron';
-import NavFilter from './NavFilter';
 class BaseLayout extends Component {
 
   constructor(props) {
@@ -13,7 +12,6 @@ class BaseLayout extends Component {
     }
     this.handleExpanded = this.handleExpanded.bind(this);
     this.isJumbotron = this.isJumbotron.bind(this);
-    this.isFilter = this.isFilter.bind(this);
   }
 
   componentDidMount() {}
@@ -30,12 +28,6 @@ class BaseLayout extends Component {
     return isJumbotron;
   }
 
-  isFilter(currentPathname) {
-    const filterPathnames = ['/'];
-    const isFilter = filterPathnames.includes(currentPathname);
-    return isFilter;
-  }
-
   render() {
       
     const currentPathname = this.props.location.pathname;
@@ -49,7 +41,6 @@ class BaseLayout extends Component {
           isExpanded={this.state.isExpanded}
           handleExpanded={this.handleExpanded} />
         { this.isJumbotron(currentPathname) && <Jumbotron /> }
-        { this.isFilter(currentPathname) && <NavFilter /> }
         {this.props.children}  
       </div>
     );

@@ -9,20 +9,20 @@ class PostEdit extends Component {
         <form className={styles.form}>
           <div className={styles.input_group}>
             <label className={styles.label}>
-              <span className={styles.label_text}>제목 : </span>
-              <input type="text" className={styles.input_control} />
+              <span className={styles.label_text}>제목 </span>
+              <input type="text" className={styles.input_control} placeholder="제목을 입력해주세요." />
             </label>
           </div>
           <div className={styles.input_group}>
             <label className={styles.label}>
-              <span className={styles.label_text}>URL : </span>
-              <input type="text" className={styles.input_control} />
+              <span className={styles.label_text}>URL</span>
+              <input type="text" className={styles.input_control} placeholder="공유하는 URL을 입력해주세요." />
             </label>
           </div>
           <div className={styles.input_group}>
             <label className={styles.label}>
-              <span className={styles.label_text}>태그 : </span>
-              <input type="text" className={styles.input_control} />
+              <span className={styles.label_text}>태그</span>
+              <input type="text" className={styles.input_control} placeholder="태그를 입력해주세요. (예> html,css)" />
             </label>
           </div>
           <div className={styles.button_group}>

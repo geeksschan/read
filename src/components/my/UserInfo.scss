@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import '../../scss/utils/';
+
+.area_userinfo {
+  position: relative;
+  padding: 20px;
+  min-height: 200px;
+  background-image: url(../../static/image/library_default_image.jpg);
+  color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  @include setBackground; 
+
+  &:after {
+    content: '';
+    background-color: rgba(0,0,0,0.2);
+    @include setAbsolute;
+  }
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+}
+
+.thumbnail {
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+.image {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.desc {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.link_profile {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: #ddd;
+  font-size: 14px;
+  border: 2px solid #ddd;
+  border-radius: 2px;
+}

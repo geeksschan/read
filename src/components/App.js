@@ -6,6 +6,7 @@ import BaseLayout from './common/BaseLayout';
 import HomePage from './home/HomePage';
 import SearchPage from './search/SearchPage';
 import PostPage from './post/PostPage';
+import MyPage from './my/MyPage';
 import ErrorPage from './error/ErrorPage';
 
 class App extends Component {
@@ -25,6 +26,11 @@ class App extends Component {
                 <Route exact path="/" component={HomePage} />
                 <Route exact path={["/search", "/search/result"]} component={SearchPage} />
                 <Route exact path={["/post", "/post/:id", "/post/edit/:id"]} component={PostPage} />
+                <Route exact path={["/my", "/my/profile"]} render={(props) => {
+                  const { location: {pathname} } = props;
+                  const isEdit = pathname.indexOf('/profile') !== -1 ? true : false;
+                  return <MyPage isEdit={isEdit} />
+                }} />
                 <Route path="/error" component={ErrorPage} />
               </BaseLayout>
             )

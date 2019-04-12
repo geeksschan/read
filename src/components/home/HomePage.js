@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '@babel/polyfill';
 import { fetchCall } from '../../utils/ajax';
 
+import NavFilter from '../common/NavFilter';
 import ArticleList from '../common/ArticleList';
 import Article from '../common/Article';
 import moment from 'moment';
@@ -39,6 +39,7 @@ class HomePage extends Component {
     
     return (
       <section>
+        <NavFilter filterList={['최신','인기']} />
         {isLoaded && (
           <div className={styles.area_article}>
           {articles.map((article) => {
