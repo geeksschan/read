@@ -26,10 +26,21 @@ class App extends Component {
                 <Route exact path="/" component={HomePage} />
                 <Route exact path={["/search", "/search/result"]} component={SearchPage} />
                 <Route exact path={["/post", "/post/:id", "/post/edit/:id"]} component={PostPage} />
-                <Route exact path={["/my", "/my/profile"]} render={(props) => {
+                <Route exact path={["/my", "/my/edit/profile", "my/edit/password", "/my/edit/out"]} render={(props) => {
                   const { location: {pathname} } = props;
-                  const isEdit = pathname.indexOf('/profile') !== -1 ? true : false;
-                  return <MyPage isEdit={isEdit} />
+                  const isEdit = pathname.indexOf('/edit') !== -1 ? true 
+                  : false;
+                  let type = null;
+                  if(isEdit) {
+                    if(pathname.indexOf('/profile') !== -1) {
+                      type = 'profile';
+                    } else if(pathname.indexOf('/password')) {
+                      type = 'password';
+                    } else if(pathname.indexOf('/out')) {
+                      type = 'out'
+                    }
+                  }
+                  return <MyPage isEdit={isEdit} typeEdit={type} />
                 }} />
                 <Route path="/error" component={ErrorPage} />
               </BaseLayout>

@@ -1,0 +1,119 @@
+@charset "utf-8";
+@import '../../scss/utils/';
+
+.form {
+  position: relative;
+  margin-top: 10px;
+  font-size: 15px;
+  vertical-align: top;
+}
+.input_group {
+  position: relative;
+  padding: 0 20px;
+  border-bottom: 2px solid #eee;
+  box-sizing: border-box;
+}
+.label {
+  display: block;
+  line-height: 40px;
+
+  &:after {
+    @include afterClear;
+  }
+}
+.label_text {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+.input_control {
+  margin-top: 0;
+  display: inline-block;
+  width: 70%;
+  font-size: inherit;
+  line-height: inherit;
+  box-sizing: border-box;
+  border: none;
+
+  &.type_textarea {
+    float: right;
+    min-height: 100px;
+    line-height: 20px;
+    padding: 10px 0;
+  }
+  &.type_file {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 72px;
+    overflow: hidden;
+    line-height: inherit;
+    padding: 0 10px;
+    visibility: hidden;
+  }
+}
+.label .button_group {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  line-height: 0;
+}
+
+.button_file {
+  font-size: inherit;
+  line-height: inherit;
+  margin-left: -10px;
+  padding: 0 10px;
+  color: $mainColor1;
+  background-color: #fff;
+}
+
+.link_password, .link_out {
+  display: inline-block;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+.link_password {
+  color: $mainColor1;
+}
+.link_out {
+  position: relative;
+  margin-left: 10px;
+  padding-left: 11px;
+  color: $mainColor4;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 1px;
+    height: 11px;
+    background-color: #999;
+  }
+}
+
+.button_group {
+  margin-top: 15px;
+  padding: 0 20px;
+  text-align: right;
+}
+.button_submit,
+.button_cancel {
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  border: 2px solid #ddd;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.button_submit {
+  color: $mainColor1;
+  border-color: $mainColor1;
+}
+.button_cancel {
+  margin-left: 10px;
+  color: #999;
+}

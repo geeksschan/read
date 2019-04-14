@@ -16,7 +16,7 @@ class Userinfo extends Component {
           </div>
           <strong className={styles.name}>{ username }</strong>
           <p className={styles.desc}>{ ReactHtmlParser(desc) }</p>
-          {!isEdit && <Link to="/my/profile" className={styles.link_profile}>프로필 설정</Link> }
+          {!isEdit && <Link to="/my/edit/profile" className={styles.link_profile}>프로필 설정</Link> }
         </div>
       </div>
     );

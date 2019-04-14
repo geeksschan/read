@@ -6,7 +6,7 @@ import Userinfo from './Userinfo';
 import NavFilter from '../common/NavFilter';
 import ArticleList from '../common/ArticleList';
 import Article from '../common/Article';
-import ProfileEdit from './ProfileEdit';
+import EditProfile from './EditProfile';
 
 import styles from './MyPage.scss';
 
@@ -32,6 +32,7 @@ class MyPage extends Component {
 
     this.getTitle = this.getTitle.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeDesc = this.handleChangeDesc.bind(this);
   }
 
   async componentDidMount() {
@@ -51,10 +52,17 @@ class MyPage extends Component {
   }
   
   handleChange(value) {
-    console.log(value);
     this.setState((prevState) => {
       return {
         userinfo : Object.assign({}, prevState.userinfo, { username : value })
+      }
+    });
+  }
+
+  handleChangeDesc(value) {
+    this.setState((prevState) => {
+      return {
+        userinfo : Object.assign({}, prevState.userinfo, { desc : value })
       }
     });
   }
@@ -84,7 +92,10 @@ class MyPage extends Component {
         {isEdit && (
           <div className={styles.area_edit}>
             <h2 className={styles.title}>프로필 설정</h2>
-            <ProfileEdit userinfo={userinfo} handleChange={this.handleChange} />
+            <EditProfile 
+              userinfo={userinfo}
+              handleChange={this.handleChange}
+              handleChangeDesc={this.handleChangeDesc} />
           </div>
         )}
       </section>
